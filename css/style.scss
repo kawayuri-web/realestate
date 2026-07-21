@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+$main-color: #4D9600;
+
+html {
+    -webkit-appearance: none;
+    -webkit-text-size-adjust: 100%;
+    word-break: break-all;
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    font-size: 10px;
+}
+
+body {
+    font-family: "YuMincho", "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: medium;
+    font-style: normal;
+    font-size: 1.6rem;
+    color: #000;
+    line-height: calc(25 / 16);
+    letter-spacing: 0;
+}
+
+.inner {
+    max-width: 92rem;
+    margin-inline: auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width:767px) {
+    .pc {
+        display: none !important;
+    }
+}
+
+@media (min-width:768px) {
+    .sp {
+        display: none !important;
+    }
+}
+
+#container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.header {
+    height: 8rem;
+    width: 100%;
+    background-color: $main-color;
+    color: #fff;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    padding-inline: 3rem;
+    // opacity: 0;
+    .inner {
+        height: 100%;
+    }
+}
+@media (max-width:767px) {
+    .header {
+        height: 5rem;
+        padding-inline: 2rem;
+        .inner{
+        height: 5rem;
+        }
+    }
+}
+
+.header__wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    height: 100%;
+}
+
+.header-logo__text {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    a {
+        font-size: 2rem;
+        line-height: calc(20 / 20);
+    }
+}
+
+.hamburger {
+    position: relative;
+    display: block;
+    width: 7.2rem;
+    height: 5rem;
+    margin-left: auto;
+    background-color: #fff;
+}
+
+.header-nav__items {
+    display: flex;
+    column-gap: calc(30 / 920 * 100vw);
+    a {
+        font-size: 1.8rem;
+        line-height: calc(18 / 18);
+        align-items: center;
+    }
+}
+
