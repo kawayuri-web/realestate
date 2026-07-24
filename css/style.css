@@ -7,10 +7,15 @@ html {
   font-size: 10px;
 }
 
+@media (max-width: 767px) {
+  .html {
+    scroll-padding-top: 50px;
+  }
+}
 body {
   font-family: "YuMincho", "Noto Sans JP", sans-serif;
   font-optical-sizing: auto;
-  font-weight: medium;
+  font-weight: 500;
   font-style: normal;
   font-size: 1.6rem;
   color: #000;
@@ -47,7 +52,7 @@ img {
 .header {
   height: 8rem;
   width: 100%;
-  background-color: #4D9600;
+  background-color: rgba(0, 0, 0, 0);
   color: #fff;
   position: fixed;
   z-index: 999;
@@ -122,4 +127,120 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.fv-content {
+  position: relative;
+}
+
+.fv-image img {
+  aspect-ratio: 1080/800;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .fv-image img {
+    aspect-ratio: 375/601;
+  }
+}
+.fv-content__text {
+  position: absolute;
+  top: 31.3888888889vw;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 99;
+  width: 100%;
+}
+.fv-content__text p {
+  color: #fff;
+  font-size: 3.7037037037vw;
+  line-height: 1.75;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .fv-content__text {
+    top: 58.4vw;
+  }
+  .fv-content__text p {
+    font-size: 8vw;
+    line-height: 2;
+  }
+}
+.about-content {
+  position: relative;
+}
+
+.about-image img {
+  aspect-ratio: 1080/500;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .about-image img {
+    aspect-ratio: 375/584;
+  }
+}
+.about-text {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  padding-left: 13.8888888889vw;
+  padding-top: 10.1851851852vw;
+}
+.about-text-title {
+  font-size: 3rem;
+  margin-left: 5.5555555556vw;
+}
+.about-text-title p {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+}
+.about-text-desc {
+  font-size: 1.8rem;
+}
+.about-text-desc p {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  line-height: 4.4444444444vw;
+}
+
+@media (max-width: 767px) {
+  .about-text {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: initial;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 13.3333333333vw;
+  }
+  .about-text-title {
+    font-size: 6.6666666667vw;
+    margin-left: initial;
+    letter-spacing: 1rem;
+  }
+  .about-text-desc {
+    margin-top: 6.4vw;
+    font-size: 1.6rem;
+    line-height: 10rem;
+    letter-spacing: 0.5rem;
+  }
 }/*# sourceMappingURL=style.css.map */
