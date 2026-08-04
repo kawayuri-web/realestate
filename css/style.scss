@@ -348,3 +348,43 @@ body {
         }
     }
 }
+
+// works
+
+.works {
+    padding: 8rem 3rem 9.7rem;
+    &-contents {
+        display: flex;
+        margin-top: 6.8rem;
+        column-gap: calc(40 / 920 * 100vw);
+    }
+    &-image {
+        aspect-ratio: 200 / 200;
+        object-fit: cover;
+    }
+    &-text {
+        margin-top: 1.9rem;
+        p {
+            font-size: 1.6rem;
+            line-height: calc(25 / 16);
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .works {
+        padding: 5rem 2rem 4.2rem;
+        &-contents {
+            flex-direction: column;
+            margin-top: 3.8rem;
+            row-gap: 2.2rem;
+            column-gap: initial;
+        }
+        &-image {
+            aspect-ratio: 315 / 250;
+        }
+        &-text {
+            margin-top: 0.9rem;
+        }
+    }
+}

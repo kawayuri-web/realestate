@@ -315,4 +315,52 @@ img {
 .service-text-desc p {
   font-size: 1.6rem;
   line-height: 1.5625;
+}
+
+.works {
+  padding: 8rem 3rem 9.7rem;
+}
+.works-contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 6.8rem;
+  -webkit-column-gap: 4.347826087vw;
+     -moz-column-gap: 4.347826087vw;
+          column-gap: 4.347826087vw;
+}
+.works-image {
+  aspect-ratio: 200/200;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.works-text {
+  margin-top: 1.9rem;
+}
+.works-text p {
+  font-size: 1.6rem;
+  line-height: 1.5625;
+}
+
+@media (max-width: 767px) {
+  .works {
+    padding: 5rem 2rem 4.2rem;
+  }
+  .works-contents {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 3.8rem;
+    row-gap: 2.2rem;
+    -webkit-column-gap: initial;
+       -moz-column-gap: initial;
+            column-gap: initial;
+  }
+  .works-image {
+    aspect-ratio: 315/250;
+  }
+  .works-text {
+    margin-top: 0.9rem;
+  }
 }/*# sourceMappingURL=style.css.map */
