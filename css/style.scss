@@ -313,9 +313,10 @@ body {
 
     &-text {
         margin-top: 1.9rem;
-        p{
-        font-size: 1.6rem;
-        line-height: calc(25 / 16);
+
+        p {
+            font-size: 1.6rem;
+            line-height: calc(25 / 16);
         }
     }
 }
@@ -347,6 +348,7 @@ body {
 
     &-desc {
         margin-top: 1.7rem;
+
         p {
             font-size: 1.6rem;
             line-height: calc(25 / 16);
@@ -358,17 +360,21 @@ body {
 
 .works {
     padding: 8rem 3rem 9.7rem;
+
     &-contents {
         display: flex;
         margin-top: 6.8rem;
         column-gap: calc(40 / 920 * 100vw);
     }
+
     &-image {
         aspect-ratio: 200 / 200;
         object-fit: cover;
     }
+
     &-text {
         margin-top: 1.9rem;
+
         p {
             font-size: 1.6rem;
             line-height: calc(25 / 16);
@@ -379,15 +385,18 @@ body {
 @media (max-width:767px) {
     .works {
         padding: 5rem 2rem 4.2rem;
+
         &-contents {
             flex-direction: column;
             margin-top: 3.8rem;
             row-gap: 2.2rem;
             column-gap: initial;
         }
+
         &-image {
             aspect-ratio: 315 / 250;
         }
+
         &-text {
             margin-top: 0.9rem;
         }
@@ -397,31 +406,35 @@ body {
 // news
 .news {
     padding: 8rem 3rem;
+
     &-contents {
         display: flex;
         justify-content: space-between;
         margin-top: 6.8rem;
         // column-gap: calc(60 / 920 * 100vw);
         column-gap: 6rem;
+
         &-index {
             background-color: $main-color;
             height: 5rem;
             display: flex;
             align-items: center;
             padding-left: 2rem;
+
             p {
                 color: #fff;
                 font-size: 2rem;
                 line-height: calc(33 / 20);
             }
         }
-        
+
     }
 }
 
 @media (max-width:767px) {
     .news {
         padding: 5rem 2rem;
+
         &-contents {
             flex-direction: column;
             row-gap: 5rem;
@@ -439,6 +452,7 @@ body {
     display: flex;
     margin-top: 2rem;
     margin-bottom: 1.3rem;
+
     time {
         font-size: 1.6rem;
         line-height: calc(33 / 16);
@@ -446,6 +460,7 @@ body {
         width: 12.2rem;
         flex-shrink: 0;
     }
+
     .news-info-text {
         p {
             font-size: 1.8rem;
@@ -454,13 +469,23 @@ body {
     }
 }
 
+@media (max-width:767px) {
+    .news-info-item {
+        time {
+            width: 7.7rem;
+        }
+    }
+}
+
 .button {
     text-align: right;
     padding-bottom: 3.1rem;
     padding-right: 5.3rem;
+
     a {
         color: $border-green;
         position: relative;
+
         &::after {
             content: '';
             position: absolute;
@@ -471,5 +496,114 @@ body {
             height: 1.8rem;
             background-image: url(../images/arrow.svg);
         }
+    }
+}
+
+.company {
+    padding: 8rem 3rem;
+
+    &-contents {
+        margin-top: 6.8rem;
+        margin-bottom: 6.2rem;
+        position: relative;
+
+        .company-map {
+            height: calc(400 / 920 * 100vw);
+            max-height: 40rem;
+            width: calc(600 / 920 * 100vw);
+            max-width: 60rem;
+            iframe {
+                aspect-ratio: 600 / 400;
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        }
+
+        .company-summary {
+            position: absolute;
+            height: calc(262 / 920 * 100vw);
+            max-height: 26.2rem;
+            width: calc(500 / 920 * 100vw);
+            max-width: 50rem;
+            bottom: -6.2rem;
+            right: 0;
+            background-color: $main-color;
+            z-index: -1;
+            padding-top: 4.9rem;
+            padding-bottom: 4.2rem;
+            padding-left: 22rem;
+            // margin-top: 2rem;
+            p {
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .company {
+        padding: 5rem 2rem;
+        &-contents {
+            margin-top: 3.8rem;
+            margin-bottom: initial;
+        }
+        .company-map {
+            height: auto;
+            width: 100%;
+            iframe {
+                aspect-ratio: 315 / 300;
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        }
+        .company-summary {
+            position: initial;
+            width: 100%;
+            background-color: $main-color;
+            // z-index: -1;
+            padding-top: 1.9rem;
+            padding-bottom: 1.2rem;
+            padding-left: 2rem;
+            
+            height: auto;
+            max-height: initial;
+            max-width: initial;
+            margin-top: 2rem;
+        }
+    }
+}
+
+.company-summary-text {
+    .address-title {
+        font-size: 2rem;
+        line-height: calc(33 / 20);
+    }
+
+    .address {
+        font-size: 1.6rem;
+        line-height: calc(25 / 16);
+        margin-top: .7rem;
+    }
+
+    .tel {
+        margin-top: 1.2rem;
+
+        p {
+            font-size: 2.5rem;
+            line-height: 1;
+
+            span {
+                font-size: 1.6rem;
+                line-height: calc(25 / 16);
+            }
+        }
+    }
+
+    .email {
+        margin-top: 1.9rem;
+        font-size: 1.6rem;
+        line-height: calc(25 / 16);
     }
 }
