@@ -438,6 +438,11 @@ img {
   line-height: 1.3888888889;
 }
 
+@media (max-width: 767px) {
+  .news-info-item time {
+    width: 7.7rem;
+  }
+}
 .button {
   text-align: right;
   padding-bottom: 3.1rem;
@@ -456,4 +461,99 @@ img {
   width: 8rem;
   height: 1.8rem;
   background-image: url(../images/arrow.svg);
+}
+
+.company {
+  padding: 8rem 3rem;
+}
+.company-contents {
+  margin-top: 6.8rem;
+  margin-bottom: 6.2rem;
+  position: relative;
+}
+.company-contents .company-map {
+  height: 43.4782608696vw;
+  max-height: 40rem;
+  width: 65.2173913043vw;
+  max-width: 60rem;
+}
+.company-contents .company-map iframe {
+  aspect-ratio: 600/400;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.company-contents .company-summary {
+  position: absolute;
+  height: 28.4782608696vw;
+  max-height: 26.2rem;
+  width: 54.347826087vw;
+  max-width: 50rem;
+  bottom: -6.2rem;
+  right: 0;
+  background-color: #4d9600;
+  z-index: -1;
+  padding-top: 4.9rem;
+  padding-bottom: 4.2rem;
+  padding-left: 22rem;
+}
+.company-contents .company-summary p {
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .company {
+    padding: 5rem 2rem;
+  }
+  .company-contents {
+    margin-top: 3.8rem;
+    margin-bottom: initial;
+  }
+  .company .company-map {
+    height: auto;
+    width: 100%;
+  }
+  .company .company-map iframe {
+    aspect-ratio: 315/300;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .company .company-summary {
+    position: initial;
+    width: 100%;
+    background-color: #4d9600;
+    padding-top: 1.9rem;
+    padding-bottom: 1.2rem;
+    padding-left: 2rem;
+    height: auto;
+    max-height: initial;
+    max-width: initial;
+    margin-top: 2rem;
+  }
+}
+.company-summary-text .address-title {
+  font-size: 2rem;
+  line-height: 1.65;
+}
+.company-summary-text .address {
+  font-size: 1.6rem;
+  line-height: 1.5625;
+  margin-top: 0.7rem;
+}
+.company-summary-text .tel {
+  margin-top: 1.2rem;
+}
+.company-summary-text .tel p {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+.company-summary-text .tel p span {
+  font-size: 1.6rem;
+  line-height: 1.5625;
+}
+.company-summary-text .email {
+  margin-top: 1.9rem;
+  font-size: 1.6rem;
+  line-height: 1.5625;
 }/*# sourceMappingURL=style.css.map */
