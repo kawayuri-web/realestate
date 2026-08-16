@@ -40,6 +40,10 @@ img {
     display: block;
 }
 
+a {
+    cursor: pointer;
+}
+
 @media (max-width: 767px) {
     .pc {
         display: none !important;
@@ -290,22 +294,88 @@ body {
 .service {
     padding: 8rem 3rem;
 
-    &-content {
+    &-wrapper {
         padding-top: 6.8rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8rem;
+    }
+
+    &-content {
+        display: flex;
+        align-items: end;
         position: relative;
+
+        &:nth-of-type(odd) {
+            .service-text-inner::before {
+                right: 0;
+            }
+
+            .service-text-inner {
+                padding-left: calc(58 / 320 * 100%);
+            }
+            @media (max-width:767px) {
+                .service-text-inner {
+                    padding-left: 2rem;
+                }
+            }
+
+        }
+
+        &:nth-of-type(even) {
+            flex-direction: row-reverse;
+
+            .service-text-inner::before {
+                left: 0;
+            }
+
+            .service-text-inner {
+                padding-left: calc(40 / 320 * 100%);
+                @media (max-width:767px) {
+                    padding-left: 2rem;
+                }
+            }
+
+            .service-image-text {
+                text-align: right;
+            }
+        }
+    }
+
+    &-text {
+        flex: 1;
+    }
+}
+
+@media (max-width:767px) {
+    .service {
+        padding: 5rem 2rem;
+
+        &-wrapper {
+            row-gap: 5rem;
+            padding-top: 3.8rem;
+        }
+
+        &-content {
+            flex-direction: column;
+            &:nth-of-type(even) {
+                flex-direction: column;
+                .service-image {
+                    text-align: left;
+                }
+
+                .service-image-text {
+                    text-align: left;
+                }
+            }
+        }
     }
 }
 
 .service-image {
-    margin-right: calc(320 / 920 * 100%);
-    padding-bottom: 9.5rem;
+    padding-bottom: 5.1rem;
+    width: calc(600 / 920 * 100%);
 
-    // &:nth-of-type(odd){
-    //     margin-right: initial;
-    //     margin-left: calc(320 / 920 * 100%);
-    // }
-
-    // z-index: 99;
     img {
         aspect-ratio: 600 / 300;
         object-fit: cover;
@@ -321,22 +391,34 @@ body {
     }
 }
 
-.service-text {
-    position: absolute;
-    background-color: $main-color;
-    right: 0;
-    bottom: 0;
-    left: 42rem;
+@media (max-width:767px) {
+    .service-image {
+        padding-bottom: 0;
+        width: 100%;
 
+        img {
+            aspect-ratio: 315 / 220;
+        }
+    }
+}
+
+.service-text {
+    flex: 1;
     color: #fff;
-    // height: 100%;
-    // width: 100%;
-    z-index: -1;
 
     &-inner {
-        margin-left: 25rem;
-        margin-top: 5rem;
-        margin-bottom: 4.2rem;
+        position: relative;
+        padding: 5rem 2rem 4.2rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            background-color: $main-color;
+            height: 100%;
+            width: calc(500 / 320 * 100%);
+            z-index: -1;
+        }
     }
 
     &-title {
@@ -352,6 +434,22 @@ body {
         p {
             font-size: 1.6rem;
             line-height: calc(25 / 16);
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .service-text {
+        // position: inherit;
+        margin-top: .6rem;
+        width: 100%;
+
+        &-inner {
+            padding: 2rem 2rem 1.2rem;
+
+            &::before {
+                width: 100%;
+            }
         }
     }
 }
@@ -512,6 +610,7 @@ body {
             max-height: 40rem;
             width: calc(600 / 920 * 100vw);
             max-width: 60rem;
+
             iframe {
                 aspect-ratio: 600 / 400;
                 width: 100%;
@@ -533,6 +632,7 @@ body {
             padding-top: 4.9rem;
             padding-bottom: 4.2rem;
             padding-left: 22rem;
+
             // margin-top: 2rem;
             p {
                 color: #fff;
@@ -544,13 +644,16 @@ body {
 @media (max-width:767px) {
     .company {
         padding: 5rem 2rem;
+
         &-contents {
             margin-top: 3.8rem;
             margin-bottom: initial;
         }
+
         .company-map {
             height: auto;
             width: 100%;
+
             iframe {
                 aspect-ratio: 315 / 300;
                 width: 100%;
@@ -558,6 +661,7 @@ body {
                 display: block;
             }
         }
+
         .company-summary {
             position: initial;
             width: 100%;
@@ -566,7 +670,7 @@ body {
             padding-top: 1.9rem;
             padding-bottom: 1.2rem;
             padding-left: 2rem;
-            
+
             height: auto;
             max-height: initial;
             max-width: initial;
@@ -603,7 +707,14 @@ body {
 
     .email {
         margin-top: 1.9rem;
-        font-size: 1.6rem;
-        line-height: calc(25 / 16);
+
+        a {
+            pointer-events: auto;
+        }
+
+        p {
+            font-size: 1.6rem;
+            line-height: calc(25 / 16);
+        }
     }
 }
