@@ -8,7 +8,7 @@ html {
     -webkit-text-size-adjust: 100%;
     word-break: break-all;
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+    scroll-padding-top: 50px;
     font-size: 10px;
 }
 
@@ -27,6 +27,10 @@ body {
     color: #000;
     line-height: calc(25 / 16);
     letter-spacing: 0;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 
 .inner {
@@ -115,7 +119,8 @@ input[type="checkbox"] {
 @media (max-width: 767px) {
     .header {
         height: 5rem;
-        padding-inline: 2rem;
+        padding-left: 2rem;
+        padding-right: 0;
 
         .inner {
             height: 5rem;
@@ -142,26 +147,106 @@ input[type="checkbox"] {
     a {
         font-size: 2rem;
         line-height: calc(20 / 20);
+        transition: opacity .4s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: .7;
+            }
+        }
     }
 }
 
 .hamburger {
-    position: relative;
     display: block;
     width: 7.2rem;
     height: 5rem;
     margin-left: auto;
     background-color: #fff;
-}
 
+    .hamburger-menu {
+        position: relative;
+        width: 3.2rem;
+        height: 2.4rem;
+        margin: auto;
+        &.active {
+            span {
+                &:nth-child(1) {
+                    top: 50%;
+                    transform: translateY(-50%) rotate(45deg);
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    top: 50%;
+                    transform: translateY(-50%) rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: .4rem;
+        background-color: $main-color;
+        border-radius: 4px;
+        transition: transform 0.3s ease-out;
+
+        &:nth-child(1) {
+            top: 0;
+        }
+
+        &:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:nth-child(3) {
+            bottom: 0;
+        }
+    }
+}
+.header-nav {
+    @media (max-width:767px) {
+        position: fixed;
+        top: 5rem;
+        right: 0;
+        width: 30rem;
+        height: 34.8rem;
+        background-color: $main-color;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        &.active {
+            transform: translateX(0);
+        }
+    }
+}
 .header-nav__items {
     display: flex;
     column-gap: calc(30 / 920 * 100vw);
+    padding-block: 1.2rem;
+    @media (max-width:767px) {
+        flex-direction: column;
+        row-gap: 2.5rem;
+        padding-left: 2rem;
+    }
 
     a {
         font-size: 1.8rem;
         line-height: calc(18 / 18);
         align-items: center;
+        @media (max-width:767px) {
+            line-height: calc(33 / 18);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
 
@@ -734,11 +819,14 @@ body {
 
 .contact {
     padding: 8rem 3rem;
+
     @media (max-width:767px) {
         padding: 5rem 2rem;
     }
+
     .inner {
         padding-inline: 6rem;
+
         @media (max-width:767px) {
             padding-inline: initial;
         }
@@ -753,6 +841,7 @@ body {
             background-color: #fff;
             font-size: 1.8rem;
             line-height: calc(25 / 18);
+
             @media (max-width:767px) {
                 font-size: 1.6rem;
                 line-height: calc(25 / 16);
@@ -764,6 +853,7 @@ body {
             padding-inline: 2rem;
             font-size: 1.8rem;
             line-height: calc(25 / 18);
+
             @media (max-width:767px) {
                 width: 100%;
                 font-size: 1.6rem;
@@ -773,6 +863,7 @@ body {
 
         select {
             padding-inline: 2rem;
+
             @media (max-width:767px) {
                 width: 100%;
             }
@@ -788,6 +879,7 @@ body {
 
         .contact-form {
             margin-top: 7rem;
+
             @media (max-width:767px) {
                 margin-top: 4rem;
             }
@@ -796,6 +888,7 @@ body {
                 display: flex;
                 flex-direction: column;
                 row-gap: 5rem;
+
                 @media (max-width:767px) {
                     row-gap: 3rem;
                 }
@@ -804,6 +897,7 @@ body {
             .form-area {
                 display: flex;
                 align-items: center;
+
                 @media (max-width:767px) {
                     flex-direction: column;
                     align-items: stretch;
@@ -821,6 +915,7 @@ body {
             .label-width {
                 display: block;
                 width: 17rem;
+
                 @media (max-width:767px) {
                     width: 100%;
                 }
@@ -832,6 +927,7 @@ body {
                     line-height: calc(33 / 20);
                 }
             }
+
             .survey-label {
                 @media (max-width:767px) {
                     line-height: calc(27 / 20);
@@ -841,6 +937,7 @@ body {
             .form-name {
                 input {
                     flex: 1;
+
                     @media (max-width:767px) {
                         flex: none;
                     }
@@ -852,33 +949,40 @@ body {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
+
                     .label-width {
                         width: 9rem;
                     }
                 }
+
                 label {
                     display: flex;
                     align-items: center;
+
                     &:last-child {
                         margin-left: 7.4rem;
+
                         @media (max-width:767px) {
                             margin-left: 3.9rem;
                         }
                     }
                 }
+
                 input[type="radio"] {
                     margin-right: 1.9rem;
+
                     @media (max-width:767px) {
-                       margin-right: 1rem;
-                         width: auto;
-                         padding-inline: 0;
-                     }
+                        margin-right: 1rem;
+                        width: auto;
+                        padding-inline: 0;
+                    }
                 }
             }
 
             .form-email {
                 input {
                     flex: 1;
+
                     @media (max-width:767px) {
                         flex: none;
                     }
@@ -929,6 +1033,7 @@ body {
                 &-content {
                     display: grid;
                     grid-template-columns: repeat(4, minmax(200px, 1fr));
+
                     @media (max-width:767px) {
                         grid-template-columns: repeat(2, minmax(158px, 1fr));
                     }
@@ -937,9 +1042,11 @@ body {
                 label {
                     display: block;
                 }
+
                 span {
                     font-size: 1.8rem;
                     line-height: calc(25 / 16);
+
                     @media (max-width:767px) {
                         font-size: 1.6rem;
                         line-height: calc(25 / 16);
@@ -959,6 +1066,7 @@ body {
                     cursor: pointer;
                     flex: none;
                     padding: 0;
+
                     @media (max-width:767px) {
                         margin-right: 1rem;
                     }
@@ -1000,6 +1108,7 @@ body {
             .privacy-policy-text {
                 width: 100%;
                 height: 30rem;
+
                 @media (max-width:767px) {
                     height: 32.3rem;
                 }
@@ -1010,6 +1119,7 @@ body {
                     padding: 4rem;
                     font-size: 1.8rem;
                     line-height: calc(31 / 18);
+
                     @media (max-width:767px) {
                         padding: 3rem;
                         font-size: 1.6rem;
@@ -1020,6 +1130,7 @@ body {
 
             .contact-label {
                 margin-bottom: 1rem;
+
                 @media (max-width:767px) {
                     margin-bottom: 0;
                 }
@@ -1029,6 +1140,7 @@ body {
         .form-button {
             margin-top: 8rem;
             text-align: center;
+
             @media (max-width:767px) {
                 margin-top: 5rem;
             }
@@ -1042,6 +1154,7 @@ body {
                 line-height: calc(33 / 20);
                 border: 1px solid $main-color;
                 transition: background-color .4s, color .4s;
+
                 @media (max-width:767px) {
                     width: 100%;
                 }
@@ -1063,53 +1176,83 @@ body {
         padding-block: 8rem;
         max-width: 72.2rem;
         margin-inline: auto;
+
         @media (max-width:767px) {
             padding: 5rem 2rem;
         }
     }
 }
+
 .footer-text {
     text-align: center;
     margin-bottom: 2.8rem;
+
     @media (max-width:767px) {
         margin-bottom: 2rem;
     }
+
     p {
         font-size: 2rem;
         line-height: calc(33 / 20);
     }
 }
+
 .footer-nav {
     padding-top: 2.8rem;
     border-top: #000 solid 1px;
     margin-bottom: 2.6rem;
+
     @media (max-width:767px) {
         padding-top: 2rem;
         margin-bottom: 2.8rem;
     }
 }
+
 .footer-nav-items {
     display: flex;
     column-gap: 5rem;
     justify-content: center;
+
     @media (max-width:767px) {
         column-gap: 3rem;
         flex-wrap: wrap;
     }
 }
+
 .footer-nav-item {
     a {
         font-size: 1.8rem;
         line-height: calc(33 / 18);
+        transition: opacity .4s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: .7;
+            }
+        }
     }
 }
+
 .footer-sns-icons {
     display: flex;
     align-items: center;
     justify-content: center;
     column-gap: 3rem;
 }
+
 .footer-sns-icon {
+
+    a {
+        display: block;
+        transition: transform 0.4s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
     img {
         width: 2.8rem;
         height: auto;
@@ -1120,10 +1263,12 @@ body {
     background-color: $main-color;
     padding-block: 3rem;
     text-align: center;
+
     small {
         color: #fff;
         font-size: 2rem;
         line-height: calc(33 / 20);
+
         @media (max-width:767px) {
             line-height: calc(25 / 20);
         }
