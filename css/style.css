@@ -3,7 +3,7 @@ html {
   -webkit-text-size-adjust: 100%;
   word-break: break-all;
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 50px;
   font-size: 10px;
 }
 
@@ -21,6 +21,10 @@ body {
   color: #000;
   line-height: 1.5625;
   letter-spacing: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 .inner {
@@ -104,7 +108,8 @@ input[type=checkbox] {
 @media (max-width: 767px) {
   .header {
     height: 5rem;
-    padding-inline: 2rem;
+    padding-left: 2rem;
+    padding-right: 0;
   }
   .header .inner {
     height: 5rem;
@@ -139,15 +144,84 @@ input[type=checkbox] {
 .header-logo__text a {
   font-size: 2rem;
   line-height: 1;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+@media (any-hover: hover) {
+  .header-logo__text a:hover {
+    opacity: 0.7;
+  }
 }
 
 .hamburger {
-  position: relative;
   display: block;
   width: 7.2rem;
   height: 5rem;
   margin-left: auto;
   background-color: #fff;
+}
+.hamburger .hamburger-menu {
+  position: relative;
+  width: 3.2rem;
+  height: 2.4rem;
+  margin: auto;
+}
+.hamburger .hamburger-menu.active span:nth-child(1) {
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+          transform: translateY(-50%) rotate(45deg);
+}
+.hamburger .hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger .hamburger-menu.active span:nth-child(3) {
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+          transform: translateY(-50%) rotate(-45deg);
+}
+.hamburger span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 0.4rem;
+  background-color: #4d9600;
+  border-radius: 4px;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+.hamburger span:nth-child(2) {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.hamburger span:nth-child(3) {
+  bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .header-nav {
+    position: fixed;
+    top: 5rem;
+    right: 0;
+    width: 30rem;
+    height: 34.8rem;
+    background-color: #4d9600;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  }
+  .header-nav.active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 .header-nav__items {
@@ -157,6 +231,17 @@ input[type=checkbox] {
   -webkit-column-gap: 3.2608695652vw;
      -moz-column-gap: 3.2608695652vw;
           column-gap: 3.2608695652vw;
+  padding-block: 1.2rem;
+}
+@media (max-width: 767px) {
+  .header-nav__items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 2.5rem;
+    padding-left: 2rem;
+  }
 }
 .header-nav__items a {
   font-size: 1.8rem;
@@ -164,6 +249,16 @@ input[type=checkbox] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+@media (max-width: 767px) {
+  .header-nav__items a {
+    line-height: 1.8333333333;
+  }
+}
+@media (any-hover: hover) {
+  .header-nav__items a:hover {
+    text-decoration: underline;
+  }
 }
 
 .fv-content {
@@ -1104,6 +1199,13 @@ input[type=checkbox] {
 .footer-nav-item a {
   font-size: 1.8rem;
   line-height: 1.8333333333;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+@media (any-hover: hover) {
+  .footer-nav-item a:hover {
+    opacity: 0.7;
+  }
 }
 
 .footer-sns-icons {
@@ -1121,6 +1223,19 @@ input[type=checkbox] {
           column-gap: 3rem;
 }
 
+.footer-sns-icon a {
+  display: block;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
+@media (any-hover: hover) {
+  .footer-sns-icon a:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
 .footer-sns-icon img {
   width: 2.8rem;
   height: auto;
