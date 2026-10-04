@@ -8,6 +8,7 @@
   <meta name="description" content="株式会社北村建設興業の公式サイトです" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -58,11 +59,16 @@
     <main>
       <div class="fv">
         <div class="fv-content">
-          <div class="fv-image">
-            <picture>
+          <div class="swiper">
+            <div class="fv-image swiper-wrapper">
+              <div class="swiper-slide pic1"></div>
+              <div class="swiper-slide pic2"></div>
+              <div class="swiper-slide pic3"></div>
+              <!-- <picture>
               <source media="(min-width:768px)" srcset="images/FirstView_01_pc.jpg" />
               <img src="images/SP_FirstView-1.jpg" alt="永遠も。瞬間も。あなたと共に。" />
-            </picture>
+            </picture> -->
+            </div>
           </div>
           <div class="fv-content__text">
             <p>永遠も。<br class="sp">瞬間も。<br>あなたと共に。</p>
@@ -174,50 +180,96 @@
           </div>
           <div class="works-contents">
             <div class="works-content">
-              <div class="works-image">
+              <div class="works-image works-img1">
                 <picture>
                   <source media="(min-width: 768px)" srcset="images/PC_WORKS_01.jpg">
                   <img src="images/SP_WORKS_01.jpg" alt="長崎県T.O様自宅">
                 </picture>
               </div>
-              <div class="works-text">
+              <div class="works-text works-txt1">
                 <p>【新築】<br class="pc">長崎県T.O様自宅</p>
               </div>
             </div>
             <div class="works-content">
-              <div class="works-image">
+              <div class="works-image works-img2">
                 <picture>
                   <source media="(min-width: 768px)" srcset="images/PC_WORKS_02.jpg">
                   <img src="images/SP_WORKS_02.jpg" alt="京都府カトリック丹波教会">
                 </picture>
               </div>
-              <div class="works-text">
+              <div class="works-text works-txt2">
                 <p>【リノベーション】<br>京都府カトリック丹波教会</p>
               </div>
             </div>
             <div class="works-content">
-              <div class="works-image">
+              <div class="works-image works-img3">
                 <picture>
                   <source media="(min-width: 768px)" srcset="images/PC_WORKS_03.jpg">
                   <img src="images/SP_WORKS_03.jpg" alt="東京都A.F様自宅兼事務所">
                 </picture>
               </div>
-              <div class="works-text">
+              <div class="works-text works-txt3">
                 <p>【新築】<br>東京都A.F様自宅兼事務所</p>
               </div>
             </div>
             <div class="works-content">
-              <div class="works-image">
+              <div class="works-image works-img4">
                 <picture>
                   <source media="(min-width: 768px)" srcset="images/PC_WORKS_04.jpg">
                   <img src="images/SP_WORKS_04.jpg" alt="山形県銀山温泉協同組合">
                 </picture>
               </div>
-              <div class="works-text">
+              <div class="works-text works-txt4">
                 <p>【都市開発】<br>山形県銀山温泉協同組合</p>
               </div>
             </div>
           </div>
+        </div>
+        <!-- モーダル表示  -->
+        <div class="works-modal modal1">
+          <button class="modal-close"></button>
+          <div class="works-modal-wrapper">
+            <div class="works-modal-pic">
+              <img src="images/PC_WORKS_modal_01.jpg" alt="【新築】長崎県T.O様自宅">
+            </div>
+            <div class="works-modal-text">
+              <p>【新築】長崎県T.O様自宅</p>
+            </div>
+          </div>
+        </div>
+        <div class="works-modal modal2">
+          <button class="modal-close"></button>
+          <div class="works-modal-wrapper">
+            <div class="works-modal-pic">
+              <img src="images/PC_WORKS_modal_02.jpg" alt="【リノベーション】京都府カトリック丹波教会">
+            </div>
+            <div class="works-modal-text">
+              <p>【リノベーション】京都府カトリック丹波教会</p>
+            </div>
+          </div>
+        </div>
+        <div class="works-modal modal3">
+          <button class="modal-close"></button>
+          <div class="works-modal-wrapper">
+            <div class="works-modal-pic">
+              <img src="images/PC_WORKS_modal_03.jpg" alt="【新築】東京都A.F様自宅件事務所">
+            </div>
+            <div class="works-modal-text">
+              <p>【新築】東京都A.F様自宅件事務所</p>
+            </div>
+          </div>
+        </div>
+        <div class="works-modal modal4">
+          <button class="modal-close"></button>
+          <div class="works-modal-wrapper">
+            <div class="works-modal-pic">
+              <img src="images/PC_WORKS_modal_04.jpg" alt="【都市開発】山形県銀山温泉協同組合">
+            </div>
+            <div class="works-modal-text">
+              <p>【都市開発】山形県銀山温泉協同組合</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- news -->
@@ -541,6 +593,7 @@ FAX	000-000-0000
   </div>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 

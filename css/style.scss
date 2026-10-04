@@ -27,6 +27,13 @@ body {
     color: #000;
     line-height: calc(25 / 16);
     letter-spacing: 0;
+    &.modal-open::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba($color: #000000, $alpha: 0.5);
+        z-index: 9998;
+    }
 }
 
 .no-scroll {
@@ -45,6 +52,10 @@ img {
 }
 
 a {
+    cursor: pointer;
+}
+
+button {
     cursor: pointer;
 }
 
@@ -110,9 +121,14 @@ input[type="checkbox"] {
     top: 0;
     left: 0;
     padding-inline: 3rem;
+    transition: background-color .4s ease;
 
     .inner {
         height: 100%;
+    }
+
+    &.scrolled {
+        background-color: $main-color;
     }
 }
 
@@ -169,15 +185,19 @@ input[type="checkbox"] {
         width: 3.2rem;
         height: 2.4rem;
         margin: auto;
+        cursor: pointer;
+
         &.active {
             span {
                 &:nth-child(1) {
                     top: 50%;
                     transform: translateY(-50%) rotate(45deg);
                 }
+
                 &:nth-child(2) {
                     opacity: 0;
                 }
+
                 &:nth-child(3) {
                     top: 50%;
                     transform: translateY(-50%) rotate(-45deg);
@@ -209,6 +229,7 @@ input[type="checkbox"] {
         }
     }
 }
+
 .header-nav {
     @media (max-width:767px) {
         position: fixed;
@@ -219,15 +240,18 @@ input[type="checkbox"] {
         background-color: $main-color;
         transform: translateX(100%);
         transition: transform 0.3s ease;
+
         &.active {
             transform: translateX(0);
         }
     }
 }
+
 .header-nav__items {
     display: flex;
     column-gap: calc(30 / 920 * 100vw);
     padding-block: 1.2rem;
+
     @media (max-width:767px) {
         flex-direction: column;
         row-gap: 2.5rem;
@@ -238,6 +262,7 @@ input[type="checkbox"] {
         font-size: 1.8rem;
         line-height: calc(18 / 18);
         align-items: center;
+
         @media (max-width:767px) {
             line-height: calc(33 / 18);
         }
@@ -265,17 +290,70 @@ body {
     position: relative;
 }
 
-.fv-image {
-    img {
-        aspect-ratio: 1080 / 800;
-        object-fit: cover;
+// .fv-image {
+//     img {
+//         aspect-ratio: 1080 / 800;
+//         object-fit: cover;
+//     }
+// }
+
+// @media (max-width: 767px) {
+//     .fv-image {
+//         img {
+//             aspect-ratio: 375 / 601;
+//         }
+//     }
+// }
+
+@mixin swp {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.swiper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1080 / 800;
+    object-fit: cover;
+
+    @media (max-width:767px) {
+        aspect-ratio: 375 / 601;
     }
 }
 
-@media (max-width: 767px) {
-    .fv-image {
-        img {
-            aspect-ratio: 375 / 601;
+.swiper-wrapper {
+    .swiper-slide {
+        &.pic1 {
+            background: url(../images/FirstView_01_pc.jpg);
+            @include swp;
+        }
+
+        &.pic2 {
+            background: url(../images/FirstView02.jpg);
+            @include swp;
+        }
+
+        &.pic3 {
+            background: url(../images/FirstView03.jpg);
+            @include swp;
+        }
+
+        @media (max-width:767px) {
+            &.pic1 {
+                background: url(../images/SP_FirstView-1.jpg);
+                @include swp;
+            }
+
+            &.pic2 {
+                background: url(../images/SP_FirstView-2.jpg);
+                @include swp;
+            }
+
+            &.pic3 {
+                background: url(../images/SP_FirstView-3.jpg);
+                @include swp;
+            }
         }
     }
 }
@@ -553,11 +631,16 @@ body {
 
 .works {
     padding: 8rem 3rem 9.7rem;
+    position: relative;
 
     &-contents {
         display: flex;
         margin-top: 6.8rem;
         column-gap: calc(40 / 920 * 100vw);
+    }
+
+    &-content {
+        cursor: pointer;
     }
 
     &-image {
@@ -592,6 +675,58 @@ body {
 
         &-text {
             margin-top: 0.9rem;
+        }
+    }
+}
+.works-modal {
+    display: none;
+    .modal-close {
+        position: absolute;
+        top: .2rem;
+        right: .2rem;
+        width: 2rem;
+        height: 2rem;
+        background: url(../images/close.svg) center / contain no-repeat;
+    }
+    &.modal-show {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        width: calc(450 / 920 * 100vw);
+        height: calc(275 / 920 * 100vw);
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     background-image: url(../images/close.svg);
+        //     height: 2rem;
+        //     width: 2rem;
+        //     z-index: 10000;
+        //     top: 0.2rem;
+        //     right: 0.2rem;
+        // }
+        .works-modal-wrapper {
+            padding: 1.5rem 1.5rem .6rem 1.5rem;
+        }
+        .works-modal-pic {
+            width: calc(420 / 920 * 100vw);
+            height: calc(220 / 920 * 100vw);
+            img {
+                aspect-ratio: 420 /220;
+                object-fit: cover;
+            }
+        }
+        .works-modal-text {
+            margin-top: calc(9 / 920 * 100vw);
+            p {
+                font-size: 1.6rem;
+                line-height: calc(25 / 16);
+            }
         }
     }
 }
@@ -645,6 +780,13 @@ body {
     display: flex;
     margin-top: 2rem;
     margin-bottom: 1.3rem;
+    transition: opacity .4s;
+
+    @media (any-hover: hover) {
+        &:hover {
+            opacity: .7;
+        }
+    }
 
     time {
         font-size: 1.6rem;
@@ -678,6 +820,14 @@ body {
     a {
         color: $border-green;
         position: relative;
+        display: inline-block;
+        transition: transform .4s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                transform: translateX(1rem);
+            }
+        }
 
         &::after {
             content: '';
@@ -1276,11 +1426,17 @@ body {
 }
 
 .page-top {
-    img {
-        width: 6.8rem;
-        z-index: 9999;
-        position: fixed;
-        bottom: 6rem;
-        right: 6rem;
+    &.show {
+        display: block;
+        img {
+            width: 6.8rem;
+            z-index: 9999;
+            position: fixed;
+            bottom: 6rem;
+            right: 6rem;
+        }
     }
+
+    display: none;
+
 }
