@@ -58,9 +58,13 @@ $(function () {
     })
     
     //モーダルを閉じる
-    $(".modal-close").on("click", function(){
+    function closeModal() {
         $(".works-modal").removeClass("modal-show");
         $("body").removeClass("no-scroll modal-open");
+    }
+
+    $(".modal-close").on("click", function(){
+        closeModal();
     });
 
     // モーダルの外側をクリックしたら閉じる
@@ -69,8 +73,7 @@ $(function () {
             return;
         }
         if ($("body").hasClass("modal-open")) {
-            $(".works-modal").removeClass("modal-show");
-            $("body").removeClass("no-scroll modal-open");
+            closeModal();
         }
     });
 })
