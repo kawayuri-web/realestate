@@ -262,15 +262,31 @@ input[type="checkbox"] {
         font-size: 1.8rem;
         line-height: calc(18 / 18);
         align-items: center;
+        
+        position: relative;
+        display: inline-block;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
 
+            width: 100%;
+            height: 1px;
+            background-color: #fff;
+
+            transform: scale(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        @media (any-hover: hover) {
+            &:hover::after {
+                transform: scale(1);
+            }
+        }
+        
         @media (max-width:767px) {
             line-height: calc(33 / 18);
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                text-decoration: underline;
-            }
         }
     }
 }
@@ -289,21 +305,6 @@ body {
 .fv-content {
     position: relative;
 }
-
-// .fv-image {
-//     img {
-//         aspect-ratio: 1080 / 800;
-//         object-fit: cover;
-//     }
-// }
-
-// @media (max-width: 767px) {
-//     .fv-image {
-//         img {
-//             aspect-ratio: 375 / 601;
-//         }
-//     }
-// }
 
 @mixin swp {
     background-position: center;
