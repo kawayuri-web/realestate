@@ -245,9 +245,9 @@ input[type=checkbox] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 3.2608695652vw;
-     -moz-column-gap: 3.2608695652vw;
-          column-gap: 3.2608695652vw;
+  -webkit-column-gap: 3rem;
+     -moz-column-gap: 3rem;
+          column-gap: 3rem;
   padding-block: 1.2rem;
 }
 @media (max-width: 767px) {
@@ -407,26 +407,44 @@ input[type=checkbox] {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
-  padding-left: 13.8888888889vw;
+  margin-left: 5.6rem;
   padding-top: 10.1851851852vw;
 }
+@media (max-width: 767px) {
+  .about-text {
+    margin-left: 0;
+  }
+}
 .about-text-title {
-  font-size: 3rem;
-  margin-left: 5.5555555556vw;
+  margin-left: 4.4rem;
 }
 .about-text-title p {
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: 0.5rem;
 }
-.about-text-desc {
-  font-size: 1.8rem;
+@media (max-width: 767px) {
+  .about-text-title p {
+    font-size: 2.5rem;
+  }
 }
 .about-text-desc p {
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
-  line-height: 4.4444444444vw;
+  line-height: 4.8rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.7rem;
+}
+@media (max-width: 767px) {
+  .about-text-desc p {
+    font-size: 1.6rem;
+    letter-spacing: 0.4rem;
+    line-height: 2.6rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -516,7 +534,7 @@ input[type=checkbox] {
 
 @media (max-width: 767px) {
   .service {
-    padding: 5rem 2rem;
+    padding: 5rem 3rem;
   }
   .service-wrapper {
     row-gap: 5rem;
@@ -552,6 +570,11 @@ input[type=checkbox] {
 }
 .service-image-text {
   margin-top: 1.9rem;
+}
+@media (max-width: 767px) {
+  .service-image-text {
+    margin-top: 0.5rem;
+  }
 }
 .service-image-text p {
   font-size: 1.6rem;
@@ -590,6 +613,12 @@ input[type=checkbox] {
   font-size: 2.5rem;
   line-height: 1.32;
 }
+@media (max-width: 767px) {
+  .service-text-title p {
+    font-size: 2rem;
+    line-height: 1.25;
+  }
+}
 .service-text-desc {
   margin-top: 1.7rem;
 }
@@ -604,7 +633,7 @@ input[type=checkbox] {
     width: 100%;
   }
   .service-text-inner {
-    padding: 2rem 2rem 1.2rem;
+    padding: 2rem 2rem 0.9rem;
   }
   .service-text-inner::before {
     width: 100%;
@@ -619,9 +648,9 @@ input[type=checkbox] {
   display: -ms-flexbox;
   display: flex;
   margin-top: 6.8rem;
-  -webkit-column-gap: 4.347826087vw;
-     -moz-column-gap: 4.347826087vw;
-          column-gap: 4.347826087vw;
+  -webkit-column-gap: 4.347826087%;
+     -moz-column-gap: 4.347826087%;
+          column-gap: 4.347826087%;
 }
 .works-content {
   cursor: pointer;
@@ -641,7 +670,7 @@ input[type=checkbox] {
 
 @media (max-width: 767px) {
   .works {
-    padding: 5rem 2rem 4.2rem;
+    padding: 5rem 3rem 4.2rem;
   }
   .works-contents {
     -webkit-box-orient: vertical;
@@ -692,20 +721,47 @@ input[type=checkbox] {
   width: 48.9130434783vw;
   height: 29.8913043478vw;
 }
+@media (max-width: 767px) {
+  .works-modal.modal-show {
+    width: 84vw;
+    height: 56vw;
+  }
+}
 .works-modal.modal-show .works-modal-wrapper {
   padding: 1.5rem 1.5rem 0.6rem 1.5rem;
+}
+@media (max-width: 767px) {
+  .works-modal.modal-show .works-modal-wrapper {
+    padding: 2rem 2rem 0.1 0.4rem 2rem;
+  }
 }
 .works-modal.modal-show .works-modal-pic {
   width: 45.652173913vw;
   height: 23.9130434783vw;
+}
+@media (max-width: 767px) {
+  .works-modal.modal-show .works-modal-pic {
+    width: 73.0666666667vw;
+    height: 38.4vw;
+  }
 }
 .works-modal.modal-show .works-modal-pic img {
   aspect-ratio: 420/220;
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (max-width: 767px) {
+  .works-modal.modal-show .works-modal-pic img {
+    aspect-ratio: 274/144;
+  }
+}
 .works-modal.modal-show .works-modal-text {
   margin-top: 0.9782608696vw;
+}
+@media (max-width: 767px) {
+  .works-modal.modal-show .works-modal-text {
+    margin-top: 1.8666666667vw;
+  }
 }
 .works-modal.modal-show .works-modal-text p {
   font-size: 1.6rem;
@@ -723,9 +779,14 @@ input[type=checkbox] {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 6.8rem;
-  -webkit-column-gap: 6rem;
-     -moz-column-gap: 6rem;
-          column-gap: 6rem;
+  -webkit-column-gap: 6.5217391304%;
+     -moz-column-gap: 6.5217391304%;
+          column-gap: 6.5217391304%;
+}
+@media (max-width: 767px) {
+  .news-contents {
+    margin-top: 3.8rem;
+  }
 }
 .news-contents-index {
   background-color: #4d9600;
@@ -737,6 +798,7 @@ input[type=checkbox] {
       -ms-flex-align: center;
           align-items: center;
   padding-left: 2rem;
+  margin-bottom: 1rem;
 }
 .news-contents-index p {
   color: #fff;
@@ -746,7 +808,7 @@ input[type=checkbox] {
 
 @media (max-width: 767px) {
   .news {
-    padding: 5rem 2rem;
+    padding: 5rem 3rem;
   }
   .news-contents {
     -webkit-box-orient: vertical;
@@ -758,16 +820,16 @@ input[type=checkbox] {
 }
 .news-info-items {
   border-bottom: 1px solid #55A500;
-  margin: 2rem;
+  padding-bottom: 1.3rem;
+  margin-inline: 2rem;
   max-width: 43rem;
+  padding-top: 2rem;
 }
 
 .news-info-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 2rem;
-  margin-bottom: 1.3rem;
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
 }
@@ -787,17 +849,27 @@ input[type=checkbox] {
 .news-info-item .news-info-text p {
   font-size: 1.8rem;
   line-height: 1.3888888889;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {
   .news-info-item time {
-    width: 7.7rem;
+    width: 7.2rem;
   }
 }
 .button {
+  margin-top: 2rem;
   text-align: right;
   padding-bottom: 3.1rem;
   padding-right: 5.3rem;
+}
+@media (max-width: 767px) {
+  .button {
+    padding-bottom: 2.4rem;
+  }
 }
 .button a {
   color: #55A500;
@@ -807,6 +879,8 @@ input[type=checkbox] {
   transition: -webkit-transform 0.4s;
   transition: transform 0.4s;
   transition: transform 0.4s, -webkit-transform 0.4s;
+  font-size: 2rem;
+  line-height: 1;
 }
 @media (any-hover: hover) {
   .button a:hover {
@@ -840,6 +914,8 @@ input[type=checkbox] {
 .company-contents .company-map {
   padding-bottom: 6.2rem;
   width: 65.2173913043%;
+  position: relative;
+  z-index: 1;
 }
 .company-contents .company-map iframe {
   aspect-ratio: 600/400;
@@ -858,7 +934,7 @@ input[type=checkbox] {
 
 @media (max-width: 767px) {
   .company {
-    padding: 5rem 2rem;
+    padding: 5rem 3rem;
   }
   .company-contents {
     margin-top: 3.8rem;
@@ -943,7 +1019,7 @@ input[type=checkbox] {
 }
 @media (max-width: 767px) {
   .contact {
-    padding: 5rem 2rem;
+    padding: 5rem 3rem;
   }
 }
 .contact .inner {
@@ -1011,11 +1087,11 @@ input[type=checkbox] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 5rem;
+  row-gap: 4.4rem;
 }
 @media (max-width: 767px) {
   .contact-contents .contact-form .form-wrapper {
-    row-gap: 3rem;
+    row-gap: 2.5rem;
   }
 }
 .contact-contents .contact-form .form-area {
@@ -1087,6 +1163,9 @@ input[type=checkbox] {
             flex: none;
   }
 }
+.contact-contents .contact-form .form-gender .gender-label {
+  font-size: 1.8rem;
+}
 @media (max-width: 767px) {
   .contact-contents .contact-form .form-gender {
     display: -webkit-box;
@@ -1148,6 +1227,22 @@ input[type=checkbox] {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  font-size: 1.8rem;
+}
+@media (max-width: 767px) {
+  .contact-contents .contact-form .form-inquiry-type select {
+    font-size: 1.6rem;
+  }
+}
+.contact-contents .contact-form .form-inquiry-type select option {
+  font-size: 1.8rem;
+  line-height: 1.3888888889;
+}
+@media (max-width: 767px) {
+  .contact-contents .contact-form .form-inquiry-type select option {
+    font-size: 1.6rem;
+    line-height: 1.5625;
+  }
 }
 .contact-contents .contact-form .form-inquiry-type .inquiry-type-wrapper {
   position: relative;
@@ -1192,7 +1287,7 @@ input[type=checkbox] {
 }
 .contact-contents .contact-form .survey span {
   font-size: 1.8rem;
-  line-height: 1.5625;
+  line-height: 1.3888888889;
 }
 @media (max-width: 767px) {
   .contact-contents .contact-form .survey span {
