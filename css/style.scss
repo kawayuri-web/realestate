@@ -1029,6 +1029,11 @@ body {
                 line-height: calc(25 / 16);
             }
         }
+        @media (min-width:768px) {
+            a[href^="tel:"]{
+                pointer-events: none;
+            }
+        }
     }
 
     .email {
@@ -1523,18 +1528,27 @@ body {
 }
 
 .page-top {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .4s ease, visibility .4s;
     &.show {
-        display: block;
-
+        // display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
         img {
             width: 6.8rem;
             z-index: 9999;
             position: fixed;
             bottom: 6rem;
             right: 6rem;
+            @media (max-width:767px) {
+                right: 2rem;
+            }
         }
     }
 
-    display: none;
+    // display: none;
 
 }

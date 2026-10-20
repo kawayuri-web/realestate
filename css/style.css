@@ -1003,6 +1003,11 @@ input[type=checkbox] {
   font-size: 1.6rem;
   line-height: 1.5625;
 }
+@media (min-width: 768px) {
+  .company-summary-text .tel a[href^="tel:"] {
+    pointer-events: none;
+  }
+}
 .company-summary-text .email {
   margin-top: 1.9rem;
 }
@@ -1503,8 +1508,17 @@ input[type=checkbox] {
   }
 }
 
+.page-top {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: opacity 0.4s ease, visibility 0.4s;
+  transition: opacity 0.4s ease, visibility 0.4s;
+}
 .page-top.show {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 .page-top.show img {
   width: 6.8rem;
@@ -1513,6 +1527,8 @@ input[type=checkbox] {
   bottom: 6rem;
   right: 6rem;
 }
-.page-top {
-  display: none;
+@media (max-width: 767px) {
+  .page-top.show img {
+    right: 2rem;
+  }
 }/*# sourceMappingURL=style.css.map */
