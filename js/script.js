@@ -11,6 +11,15 @@ $(function () {
         $(".header-nav").removeClass("active");
         $("body").removeClass("no-scroll");
     })
+    // ハンバーガーメニューの外側をクリックしたら閉じる
+    $("body").on("click", function (e) {
+        if ($(e.target).closest(".header-nav, .hamburger").length) {
+            return;
+        }
+        $(".hamburger-menu").removeClass("active");
+        $(".header-nav").removeClass("active");
+        $("body").removeClass("no-scroll");
+    });
     $(window).on("scroll", function () {
         //aboutセクションまでスクロールしたらheaderに色をつける
         const aboutTop = $("#about").offset().top - 50;
@@ -36,40 +45,40 @@ $(function () {
         $("body").addClass("no-scroll modal-open");
         $(".page-top").removeClass("show");
     }
-    $(".works-img1, .works-txt1").on("click", function(e) {
+    $(".works-img1, .works-txt1").on("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
         openModal(".modal1");
     })
-    $(".works-img2, .works-txt2").on("click", function(e) {
+    $(".works-img2, .works-txt2").on("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
         openModal(".modal2");
     })
-    $(".works-img3, .works-txt3").on("click", function(e) {
+    $(".works-img3, .works-txt3").on("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
         openModal(".modal3");
     })
-    $(".works-img4, .works-txt4").on("click", function(e) {
+    $(".works-img4, .works-txt4").on("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
         openModal(".modal4");
     })
-    
+
     //モーダルを閉じる
     function closeModal() {
         $(".works-modal").removeClass("modal-show");
         $("body").removeClass("no-scroll modal-open");
     }
 
-    $(".modal-close").on("click", function(){
+    $(".modal-close").on("click", function () {
         closeModal();
     });
 
     // モーダルの外側をクリックしたら閉じる
-    $("body").on("click", function(e) {
-        if ($(e.target).closest(".works-modal").length){
+    $("body").on("click", function (e) {
+        if ($(e.target).closest(".works-modal").length) {
             return;
         }
         if ($("body").hasClass("modal-open")) {
