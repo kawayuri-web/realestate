@@ -94,13 +94,6 @@ button {
   background-color: #fff;
 }
 
-input[type=radio],
-input[type=checkbox] {
-  -moz-appearance: auto;
-       appearance: auto;
-  -webkit-appearance: auto;
-}
-
 .header {
   height: 8rem;
   width: 100%;
@@ -641,6 +634,12 @@ input[type=checkbox] {
   font-size: 2.5rem;
   line-height: 1.32;
 }
+@media (max-width: 900px) {
+  .service-text-title p {
+    font-size: 2.2rem;
+    line-height: 1.5;
+  }
+}
 @media (max-width: 767px) {
   .service-text-title p {
     font-size: 2rem;
@@ -653,6 +652,18 @@ input[type=checkbox] {
 .service-text-desc p {
   font-size: 1.6rem;
   line-height: 1.5625;
+}
+@media (max-width: 900px) {
+  .service-text-desc p {
+    font-size: 1.4rem;
+    line-height: 1.7857142857;
+  }
+}
+@media (max-width: 767px) {
+  .service-text-desc p {
+    font-size: 1.6rem;
+    line-height: 1.5625;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1120,7 +1131,7 @@ input[type=checkbox] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 4.4rem;
+  row-gap: 5rem;
 }
 @media (max-width: 767px) {
   .contact-contents .contact-form .form-wrapper {
@@ -1234,6 +1245,23 @@ input[type=checkbox] {
 }
 .contact-contents .contact-form .form-gender input[type=radio] {
   margin-right: 1.9rem;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 2rem;
+  border-radius: 5rem;
+  background-color: #fff;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  padding: 0;
+}
+.contact-contents .contact-form .form-gender input[type=radio]:checked {
+  background-image: url(../images/green_round.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 45%;
 }
 @media (max-width: 767px) {
   .contact-contents .contact-form .form-gender input[type=radio] {
@@ -1305,14 +1333,26 @@ input[type=checkbox] {
   width: 100%;
   padding: 2rem;
   height: 20rem;
+  margin: 0;
+}
+.contact-contents .contact-form .survey {
+  margin-top: -1.5rem;
 }
 .contact-contents .contact-form .survey-content {
   display: grid;
   grid-template-columns: repeat(4, minmax(200px, 1fr));
 }
+@media (max-width: 900px) {
+  .contact-contents .contact-form .survey-content {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+}
 @media (max-width: 767px) {
   .contact-contents .contact-form .survey-content {
     grid-template-columns: repeat(2, minmax(158px, 1fr));
+  }
+  .contact-contents .contact-form .survey-content label {
+    height: 3rem;
   }
 }
 .contact-contents .contact-form .survey label {
@@ -1329,9 +1369,6 @@ input[type=checkbox] {
   }
 }
 .contact-contents .contact-form .survey input[type=checkbox] {
-  -moz-appearance: none;
-       appearance: none;
-  -webkit-appearance: none;
   width: 2rem;
   height: 2rem;
   margin-right: 2rem;

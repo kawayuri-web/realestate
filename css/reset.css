@@ -107,3 +107,8 @@ meter {
 ::-webkit-details-marker {
   display: none;
 }
+
+input[type="checkbox"], input[type="radio"] {
+                    appearance: none;
+                    -webkit-appearance: none;
+}
