@@ -1157,7 +1157,7 @@ body {
                 row-gap: 5rem;
 
                 @media (max-width:767px) {
-                    row-gap: 2.5rem;
+                    row-gap: 3rem;
                 }
             }
 
@@ -1261,7 +1261,7 @@ body {
 
                     @media (max-width:767px) {
                         margin-right: 1rem;
-                        width: auto;
+                        // width: auto;
                         padding-inline: 0;
                     }
                 }
@@ -1333,6 +1333,9 @@ body {
 
             .survey {
                 margin-top: -1.5rem;
+                @media (max-width:767px) {
+                    margin-top: -1rem;
+                }
                 &-content {
                     display: grid;
                     grid-template-columns: repeat(4, minmax(200px, 1fr));
@@ -1547,6 +1550,9 @@ body {
     background-color: $main-color;
     padding-block: 3rem;
     text-align: center;
+    @media (max-width:767px) {
+        padding-block: 2rem;
+    }
 
     small {
         color: #fff;
