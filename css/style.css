@@ -1135,7 +1135,7 @@ button {
 }
 @media (max-width: 767px) {
   .contact-contents .contact-form .form-wrapper {
-    row-gap: 2.5rem;
+    row-gap: 3rem;
   }
 }
 .contact-contents .contact-form .form-area {
@@ -1266,7 +1266,6 @@ button {
 @media (max-width: 767px) {
   .contact-contents .contact-form .form-gender input[type=radio] {
     margin-right: 1rem;
-    width: auto;
     padding-inline: 0;
   }
 }
@@ -1337,6 +1336,11 @@ button {
 }
 .contact-contents .contact-form .survey {
   margin-top: -1.5rem;
+}
+@media (max-width: 767px) {
+  .contact-contents .contact-form .survey {
+    margin-top: -1rem;
+  }
 }
 .contact-contents .contact-form .survey-content {
   display: grid;
@@ -1561,6 +1565,11 @@ button {
   background-color: #4d9600;
   padding-block: 3rem;
   text-align: center;
+}
+@media (max-width: 767px) {
+  .footer-copy {
+    padding-block: 2rem;
+  }
 }
 .footer-copy small {
   color: #fff;
