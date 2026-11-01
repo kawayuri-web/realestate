@@ -105,11 +105,10 @@ button {
     background-color: #fff;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-    appearance: auto;
-    -webkit-appearance: auto;
-}
+// input[type="radio"] {
+//     appearance: auto;
+//     -webkit-appearance: auto;
+// }
 
 // header
 .header {
@@ -669,6 +668,10 @@ body {
                 font-size: 1.4rem;
                 line-height: calc(25 / 14);
             }
+            @media (max-width:767px) {
+                font-size: 1.6rem;
+                line-height: calc(25 / 16);
+            }
         }
     }
 }
@@ -1151,7 +1154,7 @@ body {
             .form-wrapper {
                 display: flex;
                 flex-direction: column;
-                row-gap: 4.4rem;
+                row-gap: 5rem;
 
                 @media (max-width:767px) {
                     row-gap: 2.5rem;
@@ -1238,6 +1241,23 @@ body {
 
                 input[type="radio"] {
                     margin-right: 1.9rem;
+                    width: 2rem;
+                    height: 2rem;
+                    margin-right: 2rem;
+                    border-radius: 5rem;
+
+                    background-color: #fff;
+                    vertical-align: middle;
+                    cursor: pointer;
+                    flex: none;
+                    padding: 0;
+
+                    &:checked {
+                        background-image: url(../images/green_round.svg);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 45%;
+                    }
 
                     @media (max-width:767px) {
                         margin-right: 1rem;
@@ -1307,21 +1327,31 @@ body {
                     width: 100%;
                     padding: 2rem;
                     height: 20rem;
+                    margin: 0;
                 }
             }
 
             .survey {
+                margin-top: -1.5rem;
                 &-content {
                     display: grid;
                     grid-template-columns: repeat(4, minmax(200px, 1fr));
-
+                    @media (max-width:900px) {
+                        grid-template-columns: repeat(3, minmax(200px, 1fr));
+                    }
                     @media (max-width:767px) {
                         grid-template-columns: repeat(2, minmax(158px, 1fr));
+                        label {
+                            height: 3rem;
+                        }
                     }
                 }
 
                 label {
                     display: block;
+                    // @media (max-width:767px) {
+                    //     height: 3rem;
+                    // }
                 }
 
                 span {
@@ -1335,9 +1365,6 @@ body {
                 }
 
                 input[type="checkbox"] {
-                    appearance: none;
-                    -webkit-appearance: none;
-
                     width: 2rem;
                     height: 2rem;
                     margin-right: 2rem;
@@ -1360,30 +1387,6 @@ body {
                     }
                 }
 
-                // input[type="checkbox"] {
-                //     margin-right: 2rem;
-                //     // opacity: 0;
-                //     -webkit-appearance: none;
-                //     position: absolute;
-
-                //     +span::before {
-                //         display: inline-block;
-                //         content: "";
-                //         width: 2rem;
-                //         height: 2rem;
-                //         margin-right: 2rem;
-                //         background-color: #fff;
-                //     }
-                // }
-
-                // input[type="checkbox"]:checked {
-
-                //     + span::before{
-                //         background-image: url(../images/checkmark.svg);
-                //         background-repeat: no-repeat;
-                //         background-position: 0 2px;
-                //     }
-                // }
             }
 
             .privacy-policy-text {
